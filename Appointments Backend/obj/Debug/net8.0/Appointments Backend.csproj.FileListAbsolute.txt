@@ -1,0 +1,33 @@
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\appsettings.json
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Appointments Backend.exe
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Appointments Backend.deps.json
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Appointments Backend.runtimeconfig.json
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Appointments Backend.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Appointments Backend.pdb
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointments Backend.csproj.AssemblyReference.cache
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointments Backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointments Backend.AssemblyInfoInputs.cache
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointments Backend.AssemblyInfo.cs
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointments Backend.csproj.CoreCompileInputs.cache
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointments Backend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointments Backend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\staticwebassets\msbuild.Appointments Backend.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\staticwebassets\msbuild.build.Appointments Backend.props
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Appointments Backend.props
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Appointments Backend.props
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\scopedcss\bundle\Appointments Backend.styles.css
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointm.2FCEC0EF.Up2Date
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointments Backend.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\refint\Appointments Backend.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointments Backend.pdb
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointments Backend.genruntimeconfig.cache
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\ref\Appointments Backend.dll
