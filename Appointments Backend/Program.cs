@@ -1,21 +1,26 @@
+using Microsoft.EntityFrameworkCore;
+using Appointments_Backend.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder => builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
+
+builder.Services.AddControllers();
+
+var connectionString = builder.Configuration.GetConnectionString("AppointmentsDB");
+builder.Services.AddDbContext<AppointmentDbContext>(options =>
+    options.UseMySQL(connectionString) );
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
+app.UseCors("AllowAll"); 
 
-app.MapGet("/GetAppointments", () =>
-    {
+app.MapControllers();
 
-    })
-    .WithName("GetAppointments")
-    .WithOpenApi();
-app.MapPost("/NewAppointments", () =>
-    {
-
-    })
-    .WithName("NewAppointments")
-    .WithOpenApi();
 app.Run();
