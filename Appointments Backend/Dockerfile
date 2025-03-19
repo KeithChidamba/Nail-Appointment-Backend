@@ -16,5 +16,5 @@ WORKDIR /app
 EXPOSE 8080
 COPY --from=publish /app/out .
 RUN ls -l /app
-ENTRYPOINT ["dotnet","./Appointments Backend"]
+ENTRYPOINT ["dotnet","\"Appointments Backend.dll\""]
 
