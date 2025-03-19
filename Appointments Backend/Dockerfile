@@ -15,3 +15,4 @@ FROM  mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Appointments Backend.dll"]
+RUN ls -l /app
