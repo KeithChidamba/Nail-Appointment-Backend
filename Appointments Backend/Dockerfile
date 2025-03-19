@@ -13,10 +13,7 @@ RUN dotnet publish "Appointments Backend.csproj" -c $BUILD_CONFIGURATION -o /app
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
+EXPOSE 8080
 COPY --from=publish /app/publish .
-
-# Run the DLL (note the space escape)
-ENTRYPOINT ["/app/Appointments Backend.dll"]
-
-# List contents to verify that DLL is present
+ENTRYPOINT ["./Appointments Backend"]
 RUN ls -l /app
