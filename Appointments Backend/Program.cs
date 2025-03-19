@@ -6,16 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 builder.WebHost.UseUrls($"http://*:{port}");
 
-builder.Services.AddHealthChecks();
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
-        builder => builder.AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader());
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        });
 });
-
 builder.Services.AddControllers();
 
 var connectionString = builder.Configuration.GetConnectionString("AppointmentsDB");
@@ -27,5 +27,5 @@ var app = builder.Build();
 app.UseCors("AllowAll"); 
 
 app.MapControllers();
-app.UseHealthChecks("/health");
+
 app.Run();
