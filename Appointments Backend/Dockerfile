@@ -9,12 +9,11 @@ RUN dotnet build "Appointments Backend.csproj" -c $BUILD_CONFIGURATION -o /app/b
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "Appointments Backend.csproj" -c $BUILD_CONFIGURATION -o /app/out /p:UseAppHost=false
+RUN dotnet publish "Appointments Backend.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 EXPOSE 8080
-COPY --from=publish /app/out .
-RUN ls -l /app
-ENTRYPOINT ["dotnet","\"Appointments Backend.dll\""]
-
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet","/app/publish/\"Appointments Backend.dll\""]
+RUN ls -l /app/publish
