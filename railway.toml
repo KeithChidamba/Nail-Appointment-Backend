@@ -1,8 +1,0 @@
-[build]
-builder = "dockerfile"
-dockerfilePath = "./Appointments Backend/Dockerfile"
-
-[deploy]
-startCommand = "./Appointments Backend"
-restartPolicyType = "always"
-healthcheckPath = "/health"
