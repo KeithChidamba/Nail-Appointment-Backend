@@ -17,6 +17,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 EXPOSE 8080
 COPY --from=publish /app/publish .
-RUN ls -al /app/publish
+RUN ls -al /app
 
 ENTRYPOINT ["dotnet","/app/publish/\"Appointments Backend.dll\""]
