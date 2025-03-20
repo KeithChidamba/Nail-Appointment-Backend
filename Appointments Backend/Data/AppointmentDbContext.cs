@@ -18,7 +18,7 @@ public class Appointment
     public string ClientPhone { get; set; }
     public string AppointmentDate { get; set; }
     public string AppointmentTime { get; set; }
-    public string TimeWhenBooked { get; set; }
+    public string DateTimeWhenBooked { get; set; }
     public float AppointmentPrice { get; set; }
     public string AppointmentName { get; set; }
     public int AppointmentDurationInMinutes { get; set; }
