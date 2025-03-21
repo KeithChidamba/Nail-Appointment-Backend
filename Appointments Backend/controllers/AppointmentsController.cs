@@ -23,13 +23,10 @@ public class AppointmentsController : Controller
     public async Task<ActionResult<IEnumerable<Appointment>>> GetAppointments()
     {
         List<Appointment> appointments = await _context.Appointments.ToListAsync();
-        appointments.RemoveAll(a => GetAppointmentDate(a.AppointmentDate) <= DateTime.Now.AddDays(-1));
-        return appointments.OrderBy(a=>a.AppointmentDate).ToList();
-    }
-
-    DateTime GetAppointmentDate(string date)
-    {
-        return  DateTime.ParseExact(date, "M/d/yyyy", CultureInfo.InvariantCulture);
+        appointments.RemoveAll(a => DateTime.Parse(a.AppointmentDate) <= DateTime.Now.AddDays(-1));
+        appointments.Sort((a, b) => DateTime.Parse(a.AppointmentTime).CompareTo(DateTime.Parse(b.AppointmentTime)));
+        appointments.Sort((a, b) => DateTime.Parse(a.AppointmentDate).CompareTo(DateTime.Parse(b.AppointmentDate)));
+        return appointments;
     }
     // POST: api/users
     [HttpPost("add")]
