@@ -8,13 +8,10 @@ builder.WebHost.UseUrls($"http://*:{port}");
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll",
-        policy =>
-        {
-            policy.AllowAnyOrigin()
-                  .AllowAnyMethod()
-                  .AllowAnyHeader();
-        });
+    options.AddPolicy("AllowSpecific",
+        policy => policy.WithOrigins("https://keithchidamba.github.io")
+            .AllowAnyMethod()
+            .AllowAnyHeader());
 });
 builder.Services.AddControllers();
 
@@ -24,7 +21,7 @@ builder.Services.AddDbContext<AppointmentDbContext>(options =>
 
 var app = builder.Build();
 
-app.UseCors("AllowAll"); 
+app.UseCors("AllowSpecific");
 
 app.MapControllers();
 
