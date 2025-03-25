@@ -10,12 +10,10 @@ namespace Appointments_Backend.controllers;
 public class AppointmentsController : Controller
 {
     private readonly AppointmentDbContext _context;
-    private readonly ILogger<AppointmentsController> _logger;
     
-    public AppointmentsController(AppointmentDbContext context,ILogger<AppointmentsController> logger)
+    public AppointmentsController(AppointmentDbContext context)
     {
         _context = context;
-        _logger = logger;
     }
 
     // GET: api/users
@@ -32,7 +30,6 @@ public class AppointmentsController : Controller
     [HttpPost("add")]
     public async Task<IActionResult> CreateAppointment([FromBody] string appointment)
     {
-        _logger.LogInformation($"Received: {appointment}");
         Appointment newAppointment =  JsonConvert.DeserializeObject<Appointment>(appointment);
         _context.Appointments.Add(newAppointment);
         await _context.SaveChangesAsync();

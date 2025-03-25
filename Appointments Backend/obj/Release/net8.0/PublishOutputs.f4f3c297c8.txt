@@ -1,0 +1,40 @@
+C:\Users\kidak\Downloads\Appointments Backend\out\Appointments Backend.exe
+C:\Users\kidak\Downloads\Appointments Backend\out\appsettings.Development.json
+C:\Users\kidak\Downloads\Appointments Backend\out\appsettings.json
+C:\Users\kidak\Downloads\Appointments Backend\out\Appointments Backend.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\Appointments Backend.deps.json
+C:\Users\kidak\Downloads\Appointments Backend\out\Appointments Backend.runtimeconfig.json
+C:\Users\kidak\Downloads\Appointments Backend\out\Appointments Backend.pdb
+C:\Users\kidak\Downloads\Appointments Backend\out\Google.Protobuf.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\K4os.Compression.LZ4.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\K4os.Compression.LZ4.Streams.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\K4os.Hash.xxHash.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\Microsoft.EntityFrameworkCore.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\Microsoft.OpenApi.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\Microsoft.Win32.SystemEvents.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\MySql.Data.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\ZstdNet.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\comerr64.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\gssapi64.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\k5sprt64.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\krb5_64.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\krbcc64.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\MySql.EntityFrameworkCore.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\Newtonsoft.Json.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\BouncyCastle.Crypto.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\System.Configuration.ConfigurationManager.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\System.Drawing.Common.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\System.Security.Permissions.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\System.Windows.Extensions.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\kidak\Downloads\Appointments Backend\out\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
