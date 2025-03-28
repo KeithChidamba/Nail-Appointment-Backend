@@ -22,4 +22,5 @@ public class Appointment
     public float AppointmentPrice { get; set; }
     public string AppointmentName { get; set; }
     public int AppointmentDurationInMinutes { get; set; }
+    public int isConfirmed{get;set;}
 }
