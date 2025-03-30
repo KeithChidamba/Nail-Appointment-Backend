@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4D87411B-7404-4A54-9741-07DB9DB1A227}|Appointments Backend\\Appointments Backend.csproj|c:\\users\\kidak\\downloads\\appointments backend\\appointments backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D87411B-7404-4A54-9741-07DB9DB1A227}|Appointments Backend\\Appointments Backend.csproj|solutionrelative:appointments backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D87411B-7404-4A54-9741-07DB9DB1A227}|Appointments Backend\\Appointments Backend.csproj|c:\\users\\kidak\\downloads\\appointments backend\\appointments backend\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D87411B-7404-4A54-9741-07DB9DB1A227}|Appointments Backend\\Appointments Backend.csproj|solutionrelative:appointments backend\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D87411B-7404-4A54-9741-07DB9DB1A227}|Appointments Backend\\Appointments Backend.csproj|c:\\users\\kidak\\downloads\\appointments backend\\appointments backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D87411B-7404-4A54-9741-07DB9DB1A227}|Appointments Backend\\Appointments Backend.csproj|solutionrelative:appointments backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D87411B-7404-4A54-9741-07DB9DB1A227}|Appointments Backend\\Appointments Backend.csproj|c:\\users\\kidak\\downloads\\appointments backend\\appointments backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4D87411B-7404-4A54-9741-07DB9DB1A227}|Appointments Backend\\Appointments Backend.csproj|solutionrelative:appointments backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D87411B-7404-4A54-9741-07DB9DB1A227}|Appointments Backend\\Appointments Backend.csproj|c:\\users\\kidak\\downloads\\appointments backend\\appointments backend\\data\\businessownermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D87411B-7404-4A54-9741-07DB9DB1A227}|Appointments Backend\\Appointments Backend.csproj|solutionrelative:appointments backend\\data\\businessownermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D87411B-7404-4A54-9741-07DB9DB1A227}|Appointments Backend\\Appointments Backend.csproj|c:\\users\\kidak\\downloads\\appointments backend\\appointments backend\\data\\appointmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D87411B-7404-4A54-9741-07DB9DB1A227}|Appointments Backend\\Appointments Backend.csproj|solutionrelative:appointments backend\\data\\appointmentdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 191,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BusinessOwnerModel.cs",
+              "DocumentMoniker": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\Appointments Backend\\Data\\BusinessOwnerModel.cs",
+              "RelativeDocumentMoniker": "Appointments Backend\\Data\\BusinessOwnerModel.cs",
+              "ToolTip": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\Appointments Backend\\Data\\BusinessOwnerModel.cs",
+              "RelativeToolTip": "Appointments Backend\\Data\\BusinessOwnerModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T11:56:16.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppointmentDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\Appointments Backend\\Data\\AppointmentDbContext.cs",
+              "RelativeDocumentMoniker": "Appointments Backend\\Data\\AppointmentDbContext.cs",
+              "ToolTip": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\Appointments Backend\\Data\\AppointmentDbContext.cs",
+              "RelativeToolTip": "Appointments Backend\\Data\\AppointmentDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T11:54:39.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\Appointments Backend\\controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Appointments Backend\\controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\Appointments Backend\\controllers\\AuthController.cs",
+              "RelativeToolTip": "Appointments Backend\\controllers\\AuthController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABMAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T11:52:19.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\Appointments Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "Appointments Backend\\appsettings.json",
+              "ToolTip": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\Appointments Backend\\appsettings.json",
+              "RelativeToolTip": "Appointments Backend\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-30T11:48:00.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\Appointments Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Appointments Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\Appointments Backend\\Program.cs",
+              "RelativeToolTip": "Appointments Backend\\Program.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAAAC4AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T10:58:10.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppointmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\Appointments Backend\\controllers\\AppointmentsController.cs",
+              "RelativeDocumentMoniker": "Appointments Backend\\controllers\\AppointmentsController.cs",
+              "ToolTip": "C:\\Users\\kidak\\Downloads\\Appointments Backend\\Appointments Backend\\controllers\\AppointmentsController.cs",
+              "RelativeToolTip": "Appointments Backend\\controllers\\AppointmentsController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAB4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T10:52:37.155Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-using System.Globalization;
+using Microsoft.AspNetCore.Authorization;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,8 +15,6 @@ public class AppointmentsController : Controller
     {
         _context = context;
     }
-
-    // GET: api/users
     [HttpGet("getConfirmed")]
     public async Task<ActionResult<IEnumerable<Appointment>>> GetAppointments()
     {
@@ -27,6 +25,7 @@ public class AppointmentsController : Controller
         appointments.Sort((a, b) => DateTime.Parse(a.AppointmentDate).CompareTo(DateTime.Parse(b.AppointmentDate)));
         return appointments;
     }
+    [Authorize]
     [HttpGet("getPending")]
     public async Task<ActionResult<IEnumerable<Appointment>>> GetPendingAppointments()
     {
@@ -37,7 +36,7 @@ public class AppointmentsController : Controller
         appointments.Sort((a, b) => DateTime.Parse(a.AppointmentDate).CompareTo(DateTime.Parse(b.AppointmentDate)));
         return appointments;
     }
-    // POST: api/users
+    [Authorize]
     [HttpPost("add")]
     public async Task<IActionResult> CreateAppointment([FromBody] string appointment)
     {
