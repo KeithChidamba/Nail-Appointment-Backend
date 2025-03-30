@@ -5,7 +5,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 public class BusinessOwner
 {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int BusinessID { get; set; }
 
     [Required]
