@@ -1,7 +1,7 @@
 ﻿using Appointments_Backend.Data;
 using Appointments_Backend.Services;
 using Microsoft.AspNetCore.Mvc;
-
+using Newtonsoft.Json;
 namespace Appointments_Backend.controllers
 {
     [Route("api/auth")]
@@ -44,18 +44,19 @@ namespace Appointments_Backend.controllers
             Console.WriteLine("user added");
             return Ok(new { Token = token });              
         }
-        [HttpGet("GetBusiness")]
-        public async Task<ActionResult<Business>> GetBusinessData([FromBody] LoginModel owner)
+    [HttpPost("GetBusinessData")]
+    public async Task<ActionResult<Business>> GetBusinessData([FromBody] LoginModel owner)
+    {
+        var ownerFound = _context.BusinessOwners
+            .Where(a => a.OwnerEmail == owner.OwnerEmail && a.OwnerPassword == owner.OwnerPassword)
+            .ToList();
+        if (ownerFound.Count > 0)
         {
-            List<Business> OwnerFound =  _context.BusinessOwners.Where(a=>a.OwnerEmail==owner.OwnerEmail
-            & a.OwnerPassword==owner.OwnerPassword
-            ).ToList();
-            if(OwnerFound.Count>0){
-
-               return OwnerFound.First();
-            }
-            return StatusCode(404, "This business is does'nt exist");
+            return Ok(JsonConvert.SerializeObject(ownerFound.First()));
         }
+
+        return NotFound("This business doesn't exist");
+    }
     }
 
     public class LoginModel
