@@ -12,4 +12,5 @@ public class Appointment
     public string? AppointmentName { get; set; }
     public int AppointmentDurationInMinutes { get; set; }
     public int isConfirmed{get;set;}
+    public int BusinessID{get;set;}
 }
