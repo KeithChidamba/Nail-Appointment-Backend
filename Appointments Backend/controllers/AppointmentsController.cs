@@ -46,7 +46,6 @@ public class AppointmentsController : Controller
         appointments.Sort((a, b) => DateTime.Parse(a.AppointmentDate).CompareTo(DateTime.Parse(b.AppointmentDate)));
         return appointments;
     }
-    [Authorize]
     [HttpPost("add")]
     public async Task<IActionResult> CreateAppointment([FromBody] string appointment)
     {

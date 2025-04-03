@@ -30,14 +30,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecific",
-        policy => policy.WithOrigins("https://keithchidamba.github.io", "http://localhost:5102")
-            .AllowAnyMethod()
-            .AllowAnyHeader());
-    //options.AddPolicy("AllowAll",
-    //    policy => policy.AllowAnyOrigin()
-    //        .AllowAnyMethod()
-    //        .AllowAnyHeader());
+    // options.AddPolicy("AllowSpecific",
+    //     policy => policy.WithOrigins("https://keithchidamba.github.io", "http://localhost:5102")
+    //         .AllowAnyMethod()
+    //         .AllowAnyHeader());
+    options.AddPolicy("AllowAll",
+       policy => policy.AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader());
 });
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
@@ -51,8 +51,8 @@ var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseCors("AllowSpecific");
-//app.UseCors("AllowAll");
+//app.UseCors("AllowSpecific");
+app.UseCors("AllowAll");
 app.MapControllers();
 
 app.Run();
