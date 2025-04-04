@@ -41,7 +41,6 @@ namespace Appointments_Backend.controllers
             _context.BusinessOwners.Add(newOwner);
             await _context.SaveChangesAsync();
             var token = _jwtService.GenerateToken("1", "Owner");
-            Console.WriteLine("user added");
             return Ok(new { Token = token });              
         }
     [HttpPost("GetBusinessData")]
