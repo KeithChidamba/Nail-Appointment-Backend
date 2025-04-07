@@ -19,7 +19,7 @@ namespace Appointments_Backend.controllers
         public IActionResult Login([FromBody] LoginModel model)
         {
             // Dummy user validation
-            List<Business> OwnerFound =  _context.BusinessOwners.Where(a=>a.OwnerEmail==model.OwnerEmail
+            List<Business> OwnerFound =  _context.BusinessOwners.Where(a=>a.BusinessName==model.BusinessName
             & a.OwnerPassword==model.OwnerPassword
             ).ToList();
             if(OwnerFound.Count>0){
@@ -44,10 +44,10 @@ namespace Appointments_Backend.controllers
             return Ok(new { Token = token });              
         }
     [HttpPost("GetBusinessData")]
-    public async Task<ActionResult<Business>> GetBusinessData([FromBody] LoginModel owner)
+    public async Task<ActionResult<Business>> GetBusinessData([FromBody]LoginModel owner)
     {
         var ownerFound = _context.BusinessOwners
-            .Where(a => a.OwnerEmail == owner.OwnerEmail && a.OwnerPassword == owner.OwnerPassword)
+            .Where(a => a.BusinessName == owner.BusinessName && a.OwnerPassword == owner.OwnerPassword)
             .ToList();
         if (ownerFound.Count > 0)
         {
