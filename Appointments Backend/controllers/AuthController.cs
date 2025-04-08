@@ -1,6 +1,9 @@
-﻿using Appointments_Backend.Data;
+﻿using System.Security.Claims;
+using Appointments_Backend.Data;
 using Appointments_Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.JsonWebTokens;
 using Newtonsoft.Json;
 namespace Appointments_Backend.controllers
 {
@@ -15,19 +18,18 @@ namespace Appointments_Backend.controllers
             _jwtService = jwtService;
         }
         private readonly JwtService _jwtService;
+        private readonly ClaimsPrincipal _claimsPrincipal;
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginModel model)
         {
-            // Dummy user validation
             List<Business> OwnerFound =  _context.BusinessOwners.Where(a=>a.BusinessName==model.BusinessName
-            & a.OwnerPassword==model.OwnerPassword
+            & a.OwnerPassword==model.OwnerPassword & a.OwnerEmail==model.OwnerEmail
             ).ToList();
             if(OwnerFound.Count>0){
-                var token = _jwtService.GenerateToken("1", "Owner");
-                Console.WriteLine("logged in");
+                var token = _jwtService.GenerateToken(OwnerFound[0].BusinessID.ToString());
                 return Ok(new { Token = token });
             }
-            return StatusCode(404, "This business is does'nt exist");
+            return Unauthorized("Invalid credentials.");
         }
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] Business newOwner)
@@ -35,26 +37,26 @@ namespace Appointments_Backend.controllers
             List<Business> OwnerFound = _context.BusinessOwners.Where(a=>a.OwnerEmail==newOwner.OwnerEmail
             || a.BusinessName==newOwner.BusinessName).ToList();
             if(OwnerFound.Count>0){
-                Console.WriteLine("user exists");
                 return StatusCode(403, "This business is already registered");
             }
             _context.BusinessOwners.Add(newOwner);
             await _context.SaveChangesAsync();
-            var token = _jwtService.GenerateToken("1", "Owner");
+            var token = _jwtService.GenerateToken(newOwner.BusinessID.ToString());
             return Ok(new { Token = token });              
         }
-    [HttpPost("GetBusinessData")]
-    public async Task<ActionResult<Business>> GetBusinessData([FromBody]LoginModel owner)
+    [Authorize]
+    [HttpGet("GetBusinessData")]
+    public async Task<ActionResult<Business>> GetBusinessData()
     {
+        var BusinessID = User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
         var ownerFound = _context.BusinessOwners
-            .Where(a => a.BusinessName == owner.BusinessName && a.OwnerPassword == owner.OwnerPassword)
+            .Where(a => a.BusinessID.ToString() == BusinessID)
             .ToList();
         if (ownerFound.Count > 0)
         {
             return Ok(JsonConvert.SerializeObject(ownerFound.First()));
         }
-
-        return NotFound("This business doesn't exist");
+        return NotFound("This business doesn't exist: "+BusinessID);
     }
     }
 

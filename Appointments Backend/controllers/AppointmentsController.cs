@@ -1,8 +1,8 @@
-using Microsoft.AspNetCore.Authorization;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Appointments_Backend.Data;
+using Microsoft.AspNetCore.Authorization;
 namespace Appointments_Backend.controllers;
 
 [Route("api/appointments")]
@@ -35,12 +35,13 @@ public class AppointmentsController : Controller
         return StatusCode(404, "This business does'nt exist");
     }
     [Authorize]
-    [HttpGet("getPending/{BusinessID}")]
-    public async Task<ActionResult<IEnumerable<Appointment>>> GetPendingAppointments(int BusinessID)
+    [HttpGet("getPending")]
+    public async Task<ActionResult<IEnumerable<Appointment>>> GetPendingAppointments()
     {
+        var BusinessID = User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
         List<Appointment> appointments = await _context.Appointments.ToListAsync();
         appointments.RemoveAll(a => DateTime.Parse(a.AppointmentDate) <= DateTime.Now.AddDays(-1));
-        appointments.RemoveAll(a => a.BusinessID!=BusinessID);
+        appointments.RemoveAll(a => a.BusinessID.ToString() != BusinessID);
         appointments.RemoveAll(a => a.isConfirmed==1);
         appointments.Sort((a, b) => DateTime.Parse(a.AppointmentTime).CompareTo(DateTime.Parse(b.AppointmentTime)));
         appointments.Sort((a, b) => DateTime.Parse(a.AppointmentDate).CompareTo(DateTime.Parse(b.AppointmentDate)));
