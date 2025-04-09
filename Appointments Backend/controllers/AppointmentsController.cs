@@ -36,7 +36,7 @@ public class AppointmentsController : Controller
     }
     [Authorize]
     [HttpGet("getPending")]
-    public async Task<ActionResult<IEnumerable<Appointment>>> GetPendingAppointments()
+    public async Task<ActionResult<string>> GetPendingAppointments()
     {
         var BusinessID = User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
         List<Appointment> appointments = await _context.Appointments.ToListAsync();
@@ -45,7 +45,7 @@ public class AppointmentsController : Controller
         appointments.RemoveAll(a => a.isConfirmed==1);
         appointments.Sort((a, b) => DateTime.Parse(a.AppointmentTime).CompareTo(DateTime.Parse(b.AppointmentTime)));
         appointments.Sort((a, b) => DateTime.Parse(a.AppointmentDate).CompareTo(DateTime.Parse(b.AppointmentDate)));
-        return appointments;
+        return JsonConvert.SerializeObject(appointments);
     }
     [HttpPost("add")]
     public async Task<IActionResult> CreateAppointment([FromBody] string appointment)
