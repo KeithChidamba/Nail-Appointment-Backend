@@ -47,12 +47,24 @@ public class AppointmentsController : Controller
         appointments.Sort((a, b) => DateTime.Parse(a.AppointmentDate).CompareTo(DateTime.Parse(b.AppointmentDate)));
         return JsonConvert.SerializeObject(appointments);
     }
-    [HttpPost("add")]
-    public async Task<IActionResult> CreateAppointment([FromBody] string appointment)
+    [HttpPatch("update")]
+    public async Task<IActionResult> UpdateAppointment([FromBody] Appointment UpdatedData)
     {
-        Appointment newAppointment =  JsonConvert.DeserializeObject<Appointment>(appointment);
+        Appointment currentAppointment = _context.Appointments.Where(a=>a.AppointmentID==UpdatedData.AppointmentID).First();
+        currentAppointment.AppointmentDate=UpdatedData.AppointmentDate;
+        currentAppointment.AppointmentTime=UpdatedData.AppointmentTime;
+        currentAppointment.AppointmentPrice=UpdatedData.AppointmentPrice;
+        currentAppointment.AppointmentDurationInMinutes=UpdatedData.AppointmentDurationInMinutes;
+        currentAppointment.AppointmentName=UpdatedData.AppointmentName;
+        await _context.SaveChangesAsync();
+        return Ok("updated appointment");
+    }
+    [HttpPost("add")]
+    public async Task<IActionResult> CreateAppointment([FromBody] Appointment newAppointment)
+    {
+        //Appointment newAppointment =  JsonConvert.DeserializeObject<Appointment>(appointment);
         _context.Appointments.Add(newAppointment);
         await _context.SaveChangesAsync();
-        return Ok(appointment);
+        return Ok("added appointment");
     }
 }
