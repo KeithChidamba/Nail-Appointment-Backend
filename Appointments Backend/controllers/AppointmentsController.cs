@@ -47,11 +47,16 @@ public class AppointmentsController : Controller
         appointments.Sort((a, b) => DateTime.Parse(a.AppointmentDate).CompareTo(DateTime.Parse(b.AppointmentDate)));
         return JsonConvert.SerializeObject(appointments);
     }
+    [Authorize]
     [HttpPatch("update")]
     public async Task<IActionResult> UpdateAppointment([FromBody] Appointment UpdatedData)
     {
-        Appointment currentAppointment = _context.Appointments.Where(a=>a.AppointmentID==UpdatedData.AppointmentID).First();
-        currentAppointment.AppointmentDate=UpdatedData.AppointmentDate;
+        Console.WriteLine("here");
+        //Appointment UpdatedData = JsonConvert.DeserializeObject<Appointment>(data);
+        Appointment? currentAppointment = _context.Appointments.FirstOrDefault(a=>a.AppointmentID==UpdatedData.AppointmentID);
+        if (currentAppointment == null)
+            return NotFound("Appointment not found");
+         currentAppointment.AppointmentDate=UpdatedData.AppointmentDate;
         currentAppointment.AppointmentTime=UpdatedData.AppointmentTime;
         currentAppointment.AppointmentPrice=UpdatedData.AppointmentPrice;
         currentAppointment.AppointmentDurationInMinutes=UpdatedData.AppointmentDurationInMinutes;
@@ -59,6 +64,7 @@ public class AppointmentsController : Controller
         await _context.SaveChangesAsync();
         return Ok("updated appointment");
     }
+    [Authorize]
     [HttpPost("add")]
     public async Task<IActionResult> CreateAppointment([FromBody] Appointment newAppointment)
     {
