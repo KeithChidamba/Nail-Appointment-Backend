@@ -7,7 +7,7 @@ namespace Appointments_Backend.controllers;
 
 [Route("api/appointments")]
 [ApiController]
-public class AppointmentsController : Controller
+public class AppointmentsController : ControllerBase
 {
     private readonly AppointmentDbContext _context;
     
@@ -47,20 +47,27 @@ public class AppointmentsController : Controller
         appointments.Sort((a, b) => DateTime.Parse(a.AppointmentDate).CompareTo(DateTime.Parse(b.AppointmentDate)));
         return JsonConvert.SerializeObject(appointments);
     }
-    [Authorize]
+     [Authorize]
     [HttpPatch("update")]
-    public async Task<IActionResult> UpdateAppointment([FromBody] Appointment UpdatedData)
+    public async Task<IActionResult> UpdateAppointment([FromBody] string Data)
     {
         Console.WriteLine("here");
-        //Appointment UpdatedData = JsonConvert.DeserializeObject<Appointment>(data);
+        if (!ModelState.IsValid)
+        {
+            Console.WriteLine("ModelState invalid");
+            return BadRequest(ModelState);
+        }
+
+        Appointment UpdatedData = JsonConvert.DeserializeObject<Appointment>(Data);
         Appointment? currentAppointment = _context.Appointments.FirstOrDefault(a=>a.AppointmentID==UpdatedData.AppointmentID);
         if (currentAppointment == null)
             return NotFound("Appointment not found");
-         currentAppointment.AppointmentDate=UpdatedData.AppointmentDate;
-        currentAppointment.AppointmentTime=UpdatedData.AppointmentTime;
-        currentAppointment.AppointmentPrice=UpdatedData.AppointmentPrice;
-        currentAppointment.AppointmentDurationInMinutes=UpdatedData.AppointmentDurationInMinutes;
-        currentAppointment.AppointmentName=UpdatedData.AppointmentName;
+        _context.Entry(currentAppointment).CurrentValues.SetValues(UpdatedData);
+        //  currentAppointment.AppointmentDate=UpdatedData.AppointmentDate;
+        // currentAppointment.AppointmentTime=UpdatedData.AppointmentTime;
+        // currentAppointment.AppointmentPrice=UpdatedData.AppointmentPrice;
+        // currentAppointment.AppointmentDurationInMinutes=UpdatedData.AppointmentDurationInMinutes;
+        // currentAppointment.AppointmentName=UpdatedData.AppointmentName;
         await _context.SaveChangesAsync();
         return Ok("updated appointment");
     }
@@ -68,6 +75,7 @@ public class AppointmentsController : Controller
     [HttpPost("add")]
     public async Task<IActionResult> CreateAppointment([FromBody] Appointment newAppointment)
     {
+        Console.WriteLine("here");
         //Appointment newAppointment =  JsonConvert.DeserializeObject<Appointment>(appointment);
         _context.Appointments.Add(newAppointment);
         await _context.SaveChangesAsync();

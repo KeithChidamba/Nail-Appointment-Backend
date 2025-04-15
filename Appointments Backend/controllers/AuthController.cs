@@ -9,7 +9,7 @@ namespace Appointments_Backend.controllers
 {
     [Route("api/auth")]
     [ApiController]
-    public class AuthController : Controller
+    public class AuthController : ControllerBase
     {
         private readonly AppointmentDbContext _context;
         public AuthController(AppointmentDbContext context,JwtService jwtService)

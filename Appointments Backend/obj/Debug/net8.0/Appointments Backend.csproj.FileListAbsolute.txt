@@ -9,10 +9,17 @@ C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\K4os.Compression.LZ4.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\MySql.Data.dll
@@ -30,6 +37,7 @@ C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\System.Security.Permissions.dll
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\System.Windows.Extensions.dll
@@ -60,11 +68,3 @@ C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointments Backend.pdb
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\Appointments Backend.genruntimeconfig.cache
 C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\obj\Debug\net8.0\ref\Appointments Backend.dll
-C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\kidak\Downloads\Appointments Backend\Appointments Backend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
