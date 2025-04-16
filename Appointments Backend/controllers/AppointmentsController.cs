@@ -15,7 +15,7 @@ public class AppointmentsController : ControllerBase
     {
         _context = context;
     }
-    [HttpGet("getConfirmed/{BusinessName}")]
+    [HttpGet("GetForClientView/{BusinessName}")]
     public async Task<ActionResult<IEnumerable<Appointment>>> GetAppointments(string BusinessName)
     {
         if (string.IsNullOrEmpty(BusinessName))
@@ -35,14 +35,13 @@ public class AppointmentsController : ControllerBase
         return StatusCode(404, "This business does'nt exist");
     }
     [Authorize]
-    [HttpGet("getPending")]
+    [HttpGet("GetForBusinessView")]
     public async Task<ActionResult<string>> GetPendingAppointments()
     {
         var BusinessID = User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
         List<Appointment> appointments = await _context.Appointments.ToListAsync();
         appointments.RemoveAll(a => DateTime.Parse(a.AppointmentDate) <= DateTime.Now.AddDays(-1));
         appointments.RemoveAll(a => a.BusinessID.ToString() != BusinessID);
-        appointments.RemoveAll(a => a.isConfirmed==1);
         appointments.Sort((a, b) => DateTime.Parse(a.AppointmentTime).CompareTo(DateTime.Parse(b.AppointmentTime)));
         appointments.Sort((a, b) => DateTime.Parse(a.AppointmentDate).CompareTo(DateTime.Parse(b.AppointmentDate)));
         return JsonConvert.SerializeObject(appointments);
