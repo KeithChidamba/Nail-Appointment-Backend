@@ -25,10 +25,10 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = jwtIssuer,  // The issuer of the token
-        ValidAudience = jwtIssuer,  // The expected audience of the token
+        ValidIssuer = jwtIssuer, 
+        ValidAudience = jwtIssuer,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
-        ClockSkew = TimeSpan.Zero // Optional: strict expiry validation
+        ClockSkew = TimeSpan.Zero
     };
 });
 builder.Services.AddScoped<JwtService>();
@@ -38,7 +38,7 @@ builder.Services.AddCors(options =>
         policy.WithOrigins("https://keithchidamba.github.io", "http://localhost:4200")
               .AllowAnyMethod()
               .AllowAnyHeader()
-              .AllowCredentials()); // ✅ only if using cookies or Authorization
+              .AllowCredentials());
 });
 
 builder.Services.AddAuthorization();
@@ -50,21 +50,12 @@ builder.Services.AddDbContext<AppointmentDbContext>(options =>
 
 var app = builder.Build();
 
-// ✅ Log incoming requests and headers
-app.Use(async (context, next) =>
-{
-    Console.WriteLine($"Request: {context.Request.Method} {context.Request.Path}");
-    foreach (var header in context.Request.Headers)
-    {
-        Console.WriteLine($"{header.Key}: {header.Value}");
-    }
-    await next();
-});
 
-// ✅ CORS must come first before authentication
+
+
 app.UseCors("AllowSpecific"); 
 
-// ✅ Handle OPTIONS preflight explicitly here
+
 app.Use(async (context, next) =>
 {
     if (context.Request.Method == HttpMethods.Options)
@@ -81,12 +72,12 @@ app.Use(async (context, next) =>
     await next();
 });
 
-// ✅ Authentication and Authorization
+
 app.UseAuthentication();
 app.UseAuthorization();
 
-// ✅ Map the controllers
+
 app.MapControllers();
 
-// Run the app
+
 app.Run();

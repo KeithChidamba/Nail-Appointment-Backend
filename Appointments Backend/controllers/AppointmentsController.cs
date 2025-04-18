@@ -39,6 +39,7 @@ public class AppointmentsController : ControllerBase
     public async Task<ActionResult<string>> GetPendingAppointments()
     {
         var BusinessID = User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value;
+        Console.WriteLine(BusinessID);
         List<Appointment> appointments = await _context.Appointments.ToListAsync();
         appointments.RemoveAll(a => DateTime.Parse(a.AppointmentDate) <= DateTime.Now.AddDays(-1));
         appointments.RemoveAll(a => a.BusinessID.ToString() != BusinessID);
