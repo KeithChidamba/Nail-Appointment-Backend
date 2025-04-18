@@ -34,11 +34,11 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecific",
-        policy => policy.WithOrigins("https://keithchidamba.github.io", "http://localhost:5102", "http://localhost:4200")
-            .AllowAnyMethod()
-            .AllowAnyHeader()
-            .AllowCredentials());  // Allow credentials if needed
+    options.AddPolicy("AllowSpecific", policy =>
+        policy.WithOrigins("https://keithchidamba.github.io", "http://localhost:4200")
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials()); // ✅ only if using cookies or Authorization
 });
 
 builder.Services.AddAuthorization();
@@ -50,12 +50,43 @@ builder.Services.AddDbContext<AppointmentDbContext>(options =>
 
 var app = builder.Build();
 
-// CORS must be used before authentication
-app.UseCors("AllowSpecific"); // Apply CORS policy here
+// ✅ Log incoming requests and headers
+app.Use(async (context, next) =>
+{
+    Console.WriteLine($"Request: {context.Request.Method} {context.Request.Path}");
+    foreach (var header in context.Request.Headers)
+    {
+        Console.WriteLine($"{header.Key}: {header.Value}");
+    }
+    await next();
+});
 
+// ✅ CORS must come first before authentication
+app.UseCors("AllowSpecific"); 
+
+// ✅ Handle OPTIONS preflight explicitly here
+app.Use(async (context, next) =>
+{
+    if (context.Request.Method == HttpMethods.Options)
+    {
+        // Respond immediately with 200 OK for preflight requests
+        context.Response.StatusCode = 200;
+        context.Response.Headers.Add("Access-Control-Allow-Origin", context.Request.Headers["Origin"]);
+        context.Response.Headers.Add("Access-Control-Allow-Headers", "Authorization, Content-Type");
+        context.Response.Headers.Add("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
+        context.Response.Headers.Add("Access-Control-Allow-Credentials", "true");
+        await context.Response.CompleteAsync(); // Finish the response immediately
+        return;
+    }
+    await next();
+});
+
+// ✅ Authentication and Authorization
 app.UseAuthentication();
 app.UseAuthorization();
 
+// ✅ Map the controllers
 app.MapControllers();
 
+// Run the app
 app.Run();

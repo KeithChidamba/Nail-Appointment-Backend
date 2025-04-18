@@ -3,7 +3,7 @@ using Appointments_Backend.Data;
 using Appointments_Backend.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.JsonWebTokens;
+
 using Newtonsoft.Json;
 namespace Appointments_Backend.controllers
 {
@@ -18,7 +18,7 @@ namespace Appointments_Backend.controllers
             _jwtService = jwtService;
         }
         private readonly JwtService _jwtService;
-        private readonly ClaimsPrincipal _claimsPrincipal;
+
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginModel model)
         {
