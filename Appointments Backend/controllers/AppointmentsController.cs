@@ -16,7 +16,7 @@ public class AppointmentsController : ControllerBase
         _context = context;
     }
     [HttpGet("GetForClientView/{BusinessName}")]
-    public async Task<ActionResult<IEnumerable<Appointment>>> GetAppointments(string BusinessName)
+    public async Task<ActionResult<string>> GetAppointments(string BusinessName)
     {
         if (string.IsNullOrEmpty(BusinessName))
         {
@@ -30,7 +30,7 @@ public class AppointmentsController : ControllerBase
             appointments.RemoveAll(a => a.BusinessID!=OwnerFound[0].BusinessID);
             appointments.Sort((a, b) => DateTime.Parse(a.AppointmentTime).CompareTo(DateTime.Parse(b.AppointmentTime)));
             appointments.Sort((a, b) => DateTime.Parse(a.AppointmentDate).CompareTo(DateTime.Parse(b.AppointmentDate)));
-            return appointments;
+            return JsonConvert.SerializeObject(appointments);
         }
         return StatusCode(404, "This business does'nt exist");
     }
