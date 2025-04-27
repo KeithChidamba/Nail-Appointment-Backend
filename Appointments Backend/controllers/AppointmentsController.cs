@@ -60,7 +60,6 @@ public class AppointmentsController : ControllerBase
         return Ok("updated appointment");
     }
 
-    [Authorize]
     [HttpPost("add")]
     public async Task<IActionResult> CreateAppointment([FromBody] Appointment newAppointment)
     {
