@@ -57,7 +57,7 @@ public class AppointmentsController : ControllerBase
 
         _context.Entry(currentAppointment).CurrentValues.SetValues(UpdatedData);
         await _context.SaveChangesAsync();
-        return Ok("updated appointment");
+        return Ok(new { message = "updated appointment" });
     }
 
     [HttpPost("add")]
@@ -65,6 +65,6 @@ public class AppointmentsController : ControllerBase
     {
         _context.Appointments.Add(newAppointment);
         await _context.SaveChangesAsync();
-        return Ok("added appointment");
+        return Ok(new { message = "added appointment" });
     }
 }
