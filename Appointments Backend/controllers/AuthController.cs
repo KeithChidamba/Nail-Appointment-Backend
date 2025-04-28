@@ -22,9 +22,12 @@ namespace Appointments_Backend.controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginModel model)
         {
-            List<Business> OwnerFound =  _context.BusinessOwners.Where(a=>a.BusinessName==model.BusinessName
-            & a.OwnerPassword==model.OwnerPassword & a.OwnerEmail==model.OwnerEmail
-            ).ToList();
+            if(_context.BusinessOwners.Where(a=>a.BusinessName==model.BusinessName).ToList().Count==0){
+                return NotFound("This business does'nt exist");
+            }
+            List<Business> OwnerFound =  _context.BusinessOwners.Where(
+                a=>a.OwnerPassword==model.OwnerPassword & a.OwnerEmail==model.OwnerEmail
+                ).ToList();
             if(OwnerFound.Count>0){
                 var token = _jwtService.GenerateToken(OwnerFound[0].BusinessID.ToString());
                 return Ok(new { Token = token });
@@ -37,7 +40,7 @@ namespace Appointments_Backend.controllers
             List<Business> OwnerFound = _context.BusinessOwners.Where(a=>a.OwnerEmail==newOwner.OwnerEmail
             || a.BusinessName==newOwner.BusinessName).ToList();
             if(OwnerFound.Count>0){
-                return StatusCode(403, "This business is already registered");
+                return StatusCode(422, "This business is already registered");
             }
             _context.BusinessOwners.Add(newOwner);
             await _context.SaveChangesAsync();

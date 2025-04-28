@@ -32,7 +32,7 @@ public class AppointmentsController : ControllerBase
             appointments.Sort((a, b) => DateTime.Parse(a.AppointmentDate).CompareTo(DateTime.Parse(b.AppointmentDate)));
             return JsonConvert.SerializeObject(appointments);
         }
-        return StatusCode(404, "This business does'nt exist");
+       return NotFound("This business does'nt exist");
     }
     [Authorize]
     [HttpGet("GetForBusinessView")]
